@@ -1,4 +1,4 @@
-# Proyecto Urban Grocers 
+# Proyecto Urban Grocers
 
 Automatización de pruebas para el endpoint de creación de kits de productos en la aplicación Urban Grocers, enfocada en la validación del campo `name` del cuerpo de la solicitud.
 
@@ -13,6 +13,11 @@ Este proyecto automatiza una lista de comprobación de 9 casos de prueba sobre e
 - Números como texto
 - Ausencia del parámetro `name`
 - Tipo de dato incorrecto (número en vez de string)
+
+## Documentación de la API
+
+La documentación de los endpoints utilizados está disponible en:
+https://cnt-822aef79-abc7-4197-9ff9-bcf10a04023c.containerhub.tripleten-services.com/docs/
 
 ## Flujo de prueba
 
@@ -30,11 +35,18 @@ Este proyecto automatiza una lista de comprobación de 9 casos de prueba sobre e
 | `create_kit_name_kit_test.py` | Pruebas automatizadas del campo `name` |
 | `.gitignore` | Archivos/carpetas excluidos del control de versiones |
 
-## Tecnologías
+## Tecnologías y técnicas utilizadas
 
+**Tecnologías:**
 - Python 3
-- pytest
-- requests
+- pytest — framework de pruebas
+- requests — cliente HTTP para las solicitudes a la API
+
+**Técnicas:**
+- Pruebas positivas y negativas separadas en funciones reutilizables (`positive_assert`, `negative_assert`)
+- Generación dinámica de datos de prueba (por ejemplo, cadenas de longitud exacta con `"Abcd" * 128`)
+- Copia de diccionarios base (`.copy()`) para no modificar los datos de origen
+- Autenticación mediante token Bearer obtenido dinámicamente para cada prueba
 
 ## Instalación
 
